@@ -4,7 +4,7 @@ source("ExData_plotting1.R")
 # plot1.png
 plot1 <- function(df) {
     hist(df$Global_active_power, 
-        main =  "Global Active Power",
+        main = "Global Active Power",
         xlab = "Global Active Power (kilowatts)",
         col = "red")
 }

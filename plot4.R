@@ -6,7 +6,9 @@ plot4 <- function(df) {
 
     par(mfrow = c(2, 2))
     # top left 
-    # reuse existing plot2 function
+    # reusing plot2. A better way would have been to 
+    # load only plot2 function using source("plot2.R")
+    # but this would have re-execute the png generation
     plot(x = df$DateTime, y = df$Global_active_power, type="n",
          ylab = "Global Active Power (kilowatts)",
          xlab = "")
@@ -19,6 +21,8 @@ plot4 <- function(df) {
     lines( x = df$DateTime, y = df$Voltage )
     
     # bottom left
+    # same has top left figured, we could have reuse
+    # plot3 function using source("plot3.R")
     sub_metering = c(df$Sub_metering_1, df$Sub_metering_2, df$Sub_metering_3)
     sub_date = c(df$DateTime,df$DateTime,df$DateTime)
     plot(x = sub_date, y = sub_metering, type="n",

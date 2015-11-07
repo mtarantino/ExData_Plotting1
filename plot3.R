@@ -3,6 +3,11 @@ source("ExData_plotting1.R")
 
 plot3 <- function(df) {
 
+    # The plot is compose by the 3 differents sub_metering_X dataset
+    # so the plot function needs to get for x and y 
+    # the concatenated dataset of sub_metering_X and together with it
+    # three time the date datasets (otherwise it complated because x
+    # and y don't have the same length).
     sub_metering = c(df$Sub_metering_1, df$Sub_metering_2, df$Sub_metering_3)
     sub_date = c(df$DateTime,df$DateTime,df$DateTime)
     plot(x = sub_date, y = sub_metering, type="n",
